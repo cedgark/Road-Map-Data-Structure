@@ -1,0 +1,9 @@
+My implementation checks for the availability of a path between two vertices using an adjacency list structure and depth first search to solve the problem. We first do a sanity check to see if the first and second vertex are the same, and if so we can return true without doing anything, because they are neighbors, so there is a path. We then initialise the visit flags for all vertices to mark them as unvisited. 
+
+In the DFS helper function, we then first mark the start vertex/v1 as visited and then find all of v1’s neighbors, v2. If v2 is our end vertex, there is a valid path between the start and end vertex and the function returns true. If v2 has not yet been visited and one of its neighbors is the end vertex, there is a valid path and the function returns true. If none of these cases are true, the algorithm returns false to indicate there is no valid path between the start and end vertex. 
+
+My implementation has a worst case time complexity of O(v+e) as each edge is visited at most twice, once when accessing vertex v from it’s neighbor vertex u, and another time when checking u from v for the edge they share which gives us a time complexity of O(e) time in total since O(e X 2) is still O(e).
+
+Each vertex is also visited only once, which gives us O(v) time in total.
+
+Therefore, the worst-case time complexity is O(v+e) for my implementation of the depth first search.
